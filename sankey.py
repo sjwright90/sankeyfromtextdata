@@ -7,9 +7,13 @@ import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
 import itertools
-import seaborn
+from seaborn import color_palette as sns_pal
 #%%
-
+def make_clr_tup(palete = "Set3", alpha = 0.5):
+    clrpl = [list(c) + [alpha] for c in sns_pal(palete)]
+    clrpl = ["rgba" + str(tuple(c)) for c in clrpl]
+    return clrpl
+#%%
 grades = pd.read_excel("grades.xlsx")
 #%%
 def combinegrades(df, combine = ["AB", "DF"], group = ["A", "F"]):
