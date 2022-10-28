@@ -21,7 +21,6 @@ import plotly.graph_objects as go
 import itertools
 from seaborn import color_palette as sns_pal
 #%%
-
 def make_clr_tup(palete = "Set1", alpha = 0.5):
     '''Takes a color set from seaborn (default is "Set3" from colorbrewer) and 
     transforms it into a list of strings in the form: "rgba(1,1,1,1)"
