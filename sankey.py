@@ -33,9 +33,7 @@ def make_clr_tup(palete = "Set1", alpha = 0.5):
     clrpl = [list(c) + [alpha] for c in sns_pal(palete)]
     clrpl = ["rgba" + str(tuple(c)) for c in clrpl]
     return clrpl
-#%%
-grades = pd.read_excel("grades.xlsx")
-#%%
+
 def combinegrades(df, combine = ["AB", "DF"], group = ["A", "F"]):
     '''Groups fields in data frame based on input.
     Args:
@@ -46,7 +44,7 @@ def combinegrades(df, combine = ["AB", "DF"], group = ["A", "F"]):
     '''
     for c, g in zip(combine, group):
         df[df.isin(list(c))] = g
-#%%
+
 def countsdf(df):
     '''Applies value_counts to entire data frame, then converts results into a new data frame, 
     and renames final column to "Count". Gives count of each unique path through data frame.
@@ -59,7 +57,7 @@ def countsdf(df):
     out.reset_index(inplace=True)
     out.rename(columns = {out.columns[-1]: "Count"}, inplace = True)
     return out
-#%%
+
 def rename(df):
     '''Renames each item in data frame by adding the column name to all the strings in that column
     Args:
@@ -68,7 +66,7 @@ def rename(df):
     for col in df.columns:
         if df[col].dtype == "O":
             df[col] = df[col] + "_" + col
-#%%
+
 def get_labels(df):
     '''Gets all unique string values in the data frame.
     Args:
@@ -79,7 +77,7 @@ def get_labels(df):
     lab = list(itertools.chain.from_iterable(lab))
     lab = [v for v in lab if str(v).lower() != "nan"]
     return lab
-#%%
+
 def make_indexing(df, labels):
     '''Replaces all unique labels in a data frame with an integer value corresponding to that 
     label's index location in a list of the unique labels.
@@ -95,7 +93,7 @@ def make_indexing(df, labels):
     to_repl = dict(zip(labels, index_val))
     df_c.replace(to_repl, inplace = True)
     return df_c, to_repl
-#%%
+
 def get_source_target_value(df, color = False, colorset = None, alpha = 0.5):
     '''Creates three lists of integers for input into Sankey plotter
     Args:
@@ -136,7 +134,7 @@ def get_source_target_value(df, color = False, colorset = None, alpha = 0.5):
     if color:
             return source, target, value, plotclrs
     return source, target, value
-#%%
+
 def node_colors(labels, plotcolors, alpha = None):
     '''Creates a list to color the nodes by, based on labels and current
     colors allocated to the links, all other nodes will be grey
@@ -156,8 +154,8 @@ def node_colors(labels, plotcolors, alpha = None):
    
     return node_color
 
-#%%
-def plot_sankeyd(labels,src, trg, val, save = False, plotcolors = None, nodecolors = None):
+
+def plot_sankeyd(labels,src, trg, val, save = False, plotcolors = None, nodecolors = None, show_fig = False):
     '''Plots a Sankey diagram.
     Args:
         labels: list of strings, labels for each node in Sankey
@@ -171,21 +169,27 @@ def plot_sankeyd(labels,src, trg, val, save = False, plotcolors = None, nodecolo
         nodecolors: default None, if given list of rgba color strings
             will color nodes accordingly, see node_colors() function for
             making the list
+        show_fig: bool, default False, display the figure
         '''
     labels = [item.replace("_", " ") for item in labels]
     nodesdict = dict(label = labels)
     if nodecolors: nodesdict["color"] = nodecolors
+
     linksdict = dict(
                 source = src,
                 target = trg,
                 value = val 
                 )
     if plotcolors: linksdict["color"] = plotcolors
+
     fig = go.Figure(data=[go.Sankey(
         node = nodesdict,
             link = linksdict)])
-    fig.show()
+    if show_fig: 
+        fig.show()
+
     if save:
         location = input("Path and file name to save as (if saving in local folder just use filename):")
         fig.write_html(location + ".html")
-#%%
+    
+    return fig
