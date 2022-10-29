@@ -66,7 +66,8 @@ def countsdf(df):
     Returns :
     ----------
 
-    out : pandas dataframe'''
+    out : pandas dataframe
+    '''
     temp = df.value_counts(dropna=False)
     out = pd.DataFrame(temp)
     out.reset_index(inplace=True)
@@ -100,7 +101,6 @@ def get_labels(df):
     ----------
 
     list : list of strings
-
     '''
     lab = [df[col].unique() for col in df if col != "Count"]
     lab = list(itertools.chain.from_iterable(lab))
@@ -119,20 +119,17 @@ def make_indexing(df, labels):
     df : pandas data frame
 
     labels : list of strings
-
-        list of all unique strings in the dataframe
+        List of all unique strings in the dataframe
 
 
     Returns:
     ----------
 
     df_c : pandas data frame
-
         Copy of the data frame with the strings replaced by numerical or nan
 
     to_repl : dict
         A dictionary mapping strings to replacement values
-
     '''
     df_c = df.copy()
     index_val = np.arange(len(labels))
@@ -165,19 +162,15 @@ def get_source_target_value(df, color=False, colorset=None, alpha=0.5):
     ----------
 
     source: list
-
         List of int corresponding to nodes in a Sankey diagram that
         have links coming out of them
 
     target : list
-
         List of integers corresponding to nodes in a Sankey diagram that
         have links feeding into them
 
     value : list
-
         Thickness of a links connecting source and target
-
     '''
     if color:
         if isinstance(colorset, str):
@@ -214,18 +207,14 @@ def node_colors(labels, plotcolors, alpha=None):
     ----------
 
     labels : list-like
-
         List of labels that will be used in the Sankey diagram
 
     plotcolors : list-like
-
         Colors already generated to color the links in the diagram
 
     alpha : default None
-
         Change to float between 0-1 to define alpha of node color,
         default alpha is 0.5
-
     '''
     node_color = list(dict.fromkeys(plotcolors))
 
@@ -249,24 +238,19 @@ def plot_sankeyd(labels, src, trg, val, save=False, plotcolors=None,
     ----------
 
     labels : list-like
-
         List of strings, labels for each node in Sankey
 
     src : list-like
-
         List of integers, source nodes
 
     trg : list-like
-
         List of integers, target nodes
 
     val : list-like
-
         List of integers, thickness of link connecting
         source nodes and target nodes
 
     save : bool
-
         Default False, use True if to export the plot to html.
         If True will prompt for file path.
 
@@ -274,18 +258,15 @@ def plot_sankeyd(labels, src, trg, val, save=False, plotcolors=None,
         Default None, if given list of colors will color links using the list
 
     nodecolors : list-like
-
         Default None, if given list of colors will color nodes accordingly
 
     show_fig : bool
-
         Default False, use True to display the figure
 
     Returns:
     ----------
 
     fig : plotly object
-
         Returned if "save" set to True
     '''
     labels = [item.replace("_", " ") for item in labels]
