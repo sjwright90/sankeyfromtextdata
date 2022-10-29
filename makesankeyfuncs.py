@@ -145,7 +145,10 @@ def get_source_target_value(df, color=False, colorset=None, alpha=0.5):
     ----------
 
     df : pandas dataframe
-        Should consist only of int and np.nan
+        Should consist only of int and np.nan, rows
+        should be events and columns pathways, this 
+        will be the transpose of the data frame
+        produced by the function "make_indexing()"
 
     color : bool
         default False, set to True to get color list for nodes
@@ -293,3 +296,5 @@ def plot_sankeyd(labels, src, trg, val, save=False, plotcolors=None,
         fig.write_html(location + ".html")
 
     return fig
+
+# %%
