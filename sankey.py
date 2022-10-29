@@ -11,6 +11,8 @@ import itertools
 from seaborn import color_palette as sns_pal
 #%%
 def make_clr_tup(palette = "Set1", alpha = 0.5):
+    
+    
     '''Transforms Seaborn color palette into appropriate format for plotly plotting
     
     Parameters:
