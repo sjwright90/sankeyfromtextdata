@@ -23,7 +23,8 @@ from seaborn import color_palette as sns_pal
 #%%
 def make_clr_tup(palete = "Set1", alpha = 0.5):
     '''Takes a color set from seaborn (default is "Set3" from colorbrewer) and 
-    transforms it into a list of strings in the form: "rgba(1,1,1,1)"
+    transforms it into a list of strings in the form: "rgba(1,1,1,1)" 
+    
     Args:
         palete: string object of a named color palete available in seaborn
         alpha: float 0.0-1.0, the alpha level to set for all colors
@@ -35,7 +36,8 @@ def make_clr_tup(palete = "Set1", alpha = 0.5):
     return clrpl
 
 def combinegrades(df, combine = ["AB", "DF"], group = ["A", "F"]):
-    '''Groups fields in data frame based on input.
+    '''Groups fields in data frame based on input. 
+    
     Args:
         combine: list of strings to be combined. Strings to be grouped written all as one
             string (ie "AB" will be "A" and "B").
@@ -47,7 +49,8 @@ def combinegrades(df, combine = ["AB", "DF"], group = ["A", "F"]):
 
 def countsdf(df):
     '''Applies value_counts to entire data frame, then converts results into a new data frame, 
-    and renames final column to "Count". Gives count of each unique path through data frame.
+    and renames final column to "Count". Gives count of each unique path through data frame. 
+    
     Args:
         df: a pandas data frame
     Returns:
@@ -59,7 +62,8 @@ def countsdf(df):
     return out
 
 def rename(df):
-    '''Renames each item in data frame by adding the column name to all the strings in that column
+    '''Renames each item in data frame by adding the column name to all the strings in that column. 
+    
     Args:
         df: a pandas dataframe
     '''
@@ -68,7 +72,8 @@ def rename(df):
             df[col] = df[col] + "_" + col
 
 def get_labels(df):
-    '''Gets all unique string values in the data frame.
+    '''Gets all unique string values in the data frame. 
+    
     Args:
         df: a pandas dataframe
     Returns:
@@ -80,7 +85,8 @@ def get_labels(df):
 
 def make_indexing(df, labels):
     '''Replaces all unique labels in a data frame with an integer value corresponding to that 
-    label's index location in a list of the unique labels.
+    label's index location in a list of the unique labels. 
+    
     Args:
         df: pandas data frame
         labels: list of all unique strings in the data frame
@@ -95,7 +101,8 @@ def make_indexing(df, labels):
     return df_c, to_repl
 
 def get_source_target_value(df, color = False, colorset = None, alpha = 0.5):
-    '''Creates three lists of integers for input into Sankey plotter
+    '''Creates three lists of integers for input into Sankey plotter 
+    
     Args:
         df: a pandas data frame consisting only of int and np.nan
         color: bool, default False. Use True if you want to get 
@@ -137,7 +144,8 @@ def get_source_target_value(df, color = False, colorset = None, alpha = 0.5):
 
 def node_colors(labels, plotcolors, alpha = None):
     '''Creates a list to color the nodes by, based on labels and current
-    colors allocated to the links, all other nodes will be grey
+    colors allocated to the links, all other nodes will be grey. 
+    
     Args:
         labels: list of labels that will be used in the Sankey diagram
         plotcolors: colors already generated to color the links in the diagram
@@ -156,7 +164,8 @@ def node_colors(labels, plotcolors, alpha = None):
 
 
 def plot_sankeyd(labels,src, trg, val, save = False, plotcolors = None, nodecolors = None, show_fig = False):
-    '''Plots a Sankey diagram.
+    '''Plots a Sankey diagram. 
+    
     Args:
         labels: list of strings, labels for each node in Sankey
         src: source nodes
