@@ -9,6 +9,6 @@ setup(
     version = "0.1.0",
     packages=find_packages(include = ["sankey-diagrams", "sankey-diagrams.*"]),
     install_requires=["pandas >= 1.1.4", "numpy >= 1.23.3", \
-        "plotly >= 5.11.0", "seaborn >= 0.12.1"]\
-    
+        "plotly >= 5.11.0", "seaborn >= 0.12.1"],
+    python_requires=">=3.6"
 )
