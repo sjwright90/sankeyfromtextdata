@@ -16,6 +16,18 @@ formating of your data set might be needed before it will work though.
 
 The repository is set up as a library so I could install it on my local machine, I have not pushed it to PyPI as a) I do not think there is enough here to warrant distribution and b) I have not had the time to build a test file. I just set it up as a package because I was using it in multiple different scripts and was sick of copy pasting the functions. If you pull the whole repository it should be good to go for installing it locally.
 
+To install clone the repository, navigate to the top level and run
+```
+~/local/path/sankeydiagrams>pip3 install -e .
+```
+Would be best to set up a virtual environment first just in case
+
+```
+>conda create -n NAMEYOURENV
+>conda activate NAMEYOURENV
+```
+then do the local install, it should auto install all dependencies.
+
 <p align="center">
  <img src= https://github.com/sjwright90/masterfigures/blob/main/sankeyplotofgrades.png height="500" width="2000"/>
     <br>
