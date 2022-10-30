@@ -15,3 +15,9 @@ to any instance where one is trying to make a sankey plot of categorical data, a
 formating of your data set might be needed before it will work though.
 
 The repository is set up as a library so I could install it on my local machine, I have not pushed it to PyPI as a) I do not think there is enough here to warrant distribution and b) I have not had the time to build a test file. I just set it up as a package because I was using it in multiple different scripts and was sick of copy pasting the functions. If you pull the whole repository it should be good to go for installing it locally.
+
+<p align="center">
+ <img src= https://github.com/sjwright90/masterfigures/blob/main/sankeyplotofgrades.png height="500" width="2000"/>
+    <br>
+    <em>Figure 1: Example of script output</em>
+</p>
