@@ -174,6 +174,9 @@ def get_source_target_value(df, color=False, colorset=None, alpha=0.5):
 
     value : list
         Thickness of a links connecting source and target
+
+    plotclrs: list, optional
+        Only returns if color=True. List of colors for each link
     '''
     if color:
         if isinstance(colorset, str):
@@ -218,6 +221,12 @@ def node_colors(labels, plotcolors, alpha=None):
     alpha : default None
         Change to float between 0-1 to define alpha of node color,
         default alpha is 0.5
+    
+    Returns:
+    ----------
+
+    node_color: list
+        List of node colors in form "rgba(x,y,n,a)
     '''
     node_color = list(dict.fromkeys(plotcolors))
 
