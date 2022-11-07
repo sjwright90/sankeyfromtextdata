@@ -18,13 +18,16 @@ The repository is set up as a library so I could install it on my local machine,
 
 To install clone the repository then navigate to the top level of the repository and from the command line run:
 ```
-~/local/path/sankeydiagrams>pip3 install -e .
+(base) user ~ % cd local/path/to/sankeydiagrams
+(base) user sankeydiagrams % pip3 install -e .
 ```
 Would be best to set up a virtual environment first to avoid clashes between dependencies
 
 ```
->conda create -n NAMEYOURENV
->conda activate NAMEYOURENV
+(base) user ~ % conda create -n NAMEYOURENV
+(base) user ~ % conda activate NAMEYOURENV
+(NAMEYOURENV) user ~ % cd local/path/to/sankeydiagrams
+(NAMEYOURENV) user sankeydiagrams % pip3 install -e .
 ```
 then do the local install, it should auto install all dependencies.
 
