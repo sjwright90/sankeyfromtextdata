@@ -16,11 +16,11 @@ formating of your data set might be needed before it will work though.
 
 The repository is set up as a library so I could install it on my local machine, I have not pushed it to PyPI as a) I do not think there is enough here to warrant distribution and b) I have not had the time to build a test file. I just set it up as a package because I was using it in multiple different scripts and was sick of copy pasting the functions. If you pull the whole repository it should be good to go for installing it locally.
 
-To install clone the repository, navigate to the top level and run
+To install clone the repository then navigate to the top level of the repository and from the command line run:
 ```
 ~/local/path/sankeydiagrams>pip3 install -e .
 ```
-Would be best to set up a virtual environment first just in case
+Would be best to set up a virtual environment first to avoid clashes between dependencies
 
 ```
 >conda create -n NAMEYOURENV
