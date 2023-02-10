@@ -31,7 +31,7 @@ Would be best to set up a virtual environment first to avoid clashes between dep
 then do the local install, it should auto install all dependencies.
 
 <p align="center">
- <img src= https://github.com/sjwright90/masterfigures/blob/main/sankeyplotofgrades.png height="500" width="2000"/>
+ <img src= https://github.com/sjwright90/sankeyfromtextdata/blob/main/images/sankeyplotofgrades.html height="500" width="2000"/>
     <br>
     <em>Figure 1: Example of script output</em>
 </p>
