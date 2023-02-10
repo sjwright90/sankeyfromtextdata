@@ -21,13 +21,20 @@ To install clone the repository then navigate to the top level of the repository
 (base) user ~ % cd local/path/to/sankeyfromtextdata
 (base) user sankeyfromtextdata % pip3 install -e .
 ```
-Would be best to set up a virtual environment first to avoid clashes between dependencies
+Or install directly from GitHub:
+```
+(base) user ~ % pip install git+https://github.com/sjwright90/sankeyfromtextdata.git
+```
+
+It would be best to set up a virtual environment first to avoid clashes between dependencies
 
 ```
 (base) user ~ % conda create -n NAMEYOURENV
 (base) user ~ % conda activate NAMEYOURENV
 (NAMEYOURENV) user ~ % cd local/path/to/sankeyfromtextdata
 (NAMEYOURENV) user sankeyfromtextdata % pip3 install -e .
+OR
+(NAMEYOURENV) user ~ % pip install git+https://github.com/sjwright90/sankeyfromtextdata.git
 ```
 then do the local install, it will auto install all dependencies.
 
