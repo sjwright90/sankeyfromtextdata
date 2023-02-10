@@ -28,7 +28,13 @@ Would be best to set up a virtual environment first to avoid clashes between dep
 (NAMEYOURENV) user ~ % cd local/path/to/sankeyfromtextdata
 (NAMEYOURENV) user sankeyfromtextdata % pip3 install -e .
 ```
-then do the local install, it should auto install all dependencies.
+then do the local install, it will auto install all dependencies.
+
+Once the package is installed load it to your workspace using
+
+```
+from sankeydiagrams import makesankeyfuncs as snkyfnc
+```
 
 <p align="center">
  <img src= https://github.com/sjwright90/sankeyfromtextdata/blob/main/images/sankeyplotofgrades.png height="500" width="2000"/>
