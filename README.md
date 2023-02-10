@@ -1,7 +1,6 @@
-# sankey-diagrams
-Make a sankey diagram
+# Tools package to develop Sankey Diagram from text data in tabular form
 
-This file contains a series of functions used to transform and manipulate tabular text data into
+This package contains a series of functions used to transform and manipulate tabular text data into
 a format appropriate for drawing a Sankey diagram and then producing said sankey diagram.
 The tabular data does already need to be in a specific format. Each column should represent 
 one event (in this case a given class offered in a given year). Each row will be an individual 
