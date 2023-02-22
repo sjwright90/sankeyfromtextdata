@@ -1,4 +1,4 @@
-# Tools package to develop Sankey Diagram from text data in tabular form
+# Tools package to develop Sankey Diagram from categorical data in tabular form
 
 This package contains a series of functions used to transform and manipulate tabular text data into
 a format appropriate for drawing a Sankey diagram and then producing said sankey diagram.
