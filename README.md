@@ -49,3 +49,5 @@ from sankeydiagrams import makesankeyfuncs as snkyfnc
     <br>
     <em>Figure 1: Example of script output</em>
 </p>
+
+NOTE: The requirements file has been removed since GitHub keeps flagging it for safety error
